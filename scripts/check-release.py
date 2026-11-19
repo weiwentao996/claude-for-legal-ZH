@@ -10,8 +10,7 @@ Checks:
   3. No real absolute user-home paths leaked into the repo (e.g. /Users/<name>/).
   4. No likely secrets committed (API keys, tokens, passwords).
 
-Adopted from community PR #4 (@Jamesyu0829), rewritten to avoid hardcoded
-skill counts and to keep private-path patterns generic.
+Based on community contributions, with generic skill counts and private-path patterns.
 """
 
 from __future__ import annotations

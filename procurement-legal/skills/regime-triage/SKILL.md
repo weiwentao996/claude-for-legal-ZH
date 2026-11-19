@@ -12,8 +12,6 @@ argument-hint: "[采购主体、资金、标的、阶段和地区]"
 
 对 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance` 十二模块逐一判断。适用项给最低输出；不适用项给与本次制度路由有关的理由；阻塞项写缺口、补充路径和须停止的确定结论。四层区分原始文件、核实事实、制度评价和程序状态。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；法律依据与项目规则均须在运行时复核。

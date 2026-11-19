@@ -16,8 +16,6 @@ argument-hint: "[法规名称、条号、案号或待核引用]"
 
 对本次任务逐一检查 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance`。适用项给最低结论或待核动作；不适用项说明与本次核验范围有关的理由；受阻项记缺口与停止路径。简短核验可用一行状态表，不扩张为全案意见。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；法律依据与项目规则均须在运行时复核。

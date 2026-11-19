@@ -15,8 +15,6 @@ argument-hint: "[咨询问题、服务角色、事实时点和用途]"
 
 逐项检查 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance`；适用项写最低结论，不适用项写本案理由，受阻项列缺口和停止路径。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；具体法律依据与项目规则须在运行时核验。

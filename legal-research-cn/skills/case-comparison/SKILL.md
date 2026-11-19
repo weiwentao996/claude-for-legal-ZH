@@ -16,8 +16,6 @@ argument-hint: "[争点、法院、时间与待比较事实]"
 
 逐一检查 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance`。本技能尤其展开时间、请求要件、法源、证据、程序与人工复核；其他模块仍记录适用、不适用理由或阻塞缺口。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；法律依据与项目规则均须在运行时复核。

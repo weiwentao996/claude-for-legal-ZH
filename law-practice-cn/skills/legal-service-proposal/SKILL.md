@@ -15,8 +15,6 @@ argument-hint: "[客户需求、事项类型、服务范围与团队约束]"
 
 逐项检查 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance`；与报价无关的模块说明理由，收费合规与事实缺口受阻时停止确定报价。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；收费规则和市场数据须在运行时核验。

@@ -16,8 +16,6 @@ argument-hint: "[尽调项目目录、交易角色和截止日]"
 
 对 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance` 十二模块全部检查、条件展开；每项记适用输出、不适用理由或受阻缺口与下一步。证据缺口影响交易结论时停止该结论。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；法律依据与项目规则均须在运行时复核。

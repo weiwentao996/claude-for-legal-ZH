@@ -15,8 +15,6 @@ argument-hint: "[主题、听众、时长、讲座日期和地区]"
 
 逐项检查 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance`；与主题无关的模块说明理由，时效或案例授权受阻时暂停对应内容。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；讲座内容须在交付及公开前复核。

@@ -14,8 +14,6 @@ argument-hint: "[采购文件、响应文件、合同、变更与验收资料]"
 
 逐一检查 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance`。重点展开法律关系、规范、证据、效果和执行，其他模块记录不适用理由或受阻路径。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；法律依据与项目规则均须在运行时复核。

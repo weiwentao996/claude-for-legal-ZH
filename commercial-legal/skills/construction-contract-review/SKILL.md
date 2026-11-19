@@ -16,8 +16,6 @@ argument-hint: "[合同文件、我方角色和项目地点]"
 
 按 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance` 十二模块逐项检查；合同审查重点展开主体、效力、履约、证据和风险，其余项给任务相关的不适用理由或阻塞路径。不要把合同文本记载直接当作履行事实。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；法律依据与项目规则均须在运行时复核。

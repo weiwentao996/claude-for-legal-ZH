@@ -15,8 +15,6 @@ argument-hint: "[投诉对象、事项、身份、收到或知悉日期]"
 
 逐项检查 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance`；受理机关、证据或时点受阻时停止对应确定性程序判断。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；投诉渠道与期限须在运行时核验。

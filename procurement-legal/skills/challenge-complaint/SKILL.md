@@ -14,8 +14,6 @@ argument-hint: "[事项、角色、送达与知悉日期、材料]"
 
 逐一检查 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance`。特别展开时间、请求要件、证据、程序与人工复核；其余模块给具体状态及理由，关键依据受阻时停止确定性程序结论。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；法律依据与项目规则均须在运行时复核。

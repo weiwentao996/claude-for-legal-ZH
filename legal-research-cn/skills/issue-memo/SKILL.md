@@ -14,8 +14,6 @@ argument-hint: "[问题、角色、事实时点与用途]"
 
 用 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance` 十二模块状态表逐项标为适用、不适用或受阻，给出最低输出、具体理由或缺口与降级路径。材料、事实、法律评价与程序状态四层分开。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；法律依据与项目规则均须在运行时复核。

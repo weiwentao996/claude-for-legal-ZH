@@ -1,10 +1,9 @@
 # Claude for Legal — 中国法版本
 
 <p align="center">
-  <a href="https://github.com/CSlawyer1985/claude-for-legal-ZH/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
-  <a href="https://github.com/CSlawyer1985/claude-for-legal-ZH"><img src="https://img.shields.io/badge/version-v1.1.0-brightgreen" alt="Version"></a>
-  <a href="https://github.com/CSlawyer1985/claude-for-legal-ZH/stargazers"><img src="https://img.shields.io/github/stars/CSlawyer1985/claude-for-legal-ZH?style=social" alt="Stars"></a>
-  <a href="https://github.com/CSlawyer1985/claude-for-legal-ZH"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
+  <img src="https://img.shields.io/badge/version-v1.1.0-brightgreen" alt="Version">
+  <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
   <a href="INSTALL_DSH.md"><img src="https://img.shields.io/badge/DeepSeek%20Harness-已适配-4D6BFE" alt="DeepSeek Harness 适配"></a>
   <a href="INSTALL_WORKBUDDY.md"><img src="https://img.shields.io/badge/WorkBuddy-已适配-0052D9" alt="WorkBuddy 适配"></a>
   <a href="INSTALL_CODEX.md"><img src="https://img.shields.io/badge/Codex-已适配-000000" alt="Codex 适配"></a>
@@ -18,7 +17,7 @@
 
 ---
 
-> **新用户？** 先看[项目网页](https://cslawyer1985.github.io/claude-for-legal-ZH/)，再从 [QUICKSTART.md](QUICKSTART.md) 开始安装。本文是完整参考手册。
+> **新用户？** 从 [QUICKSTART.md](QUICKSTART.md) 开始安装。本文是完整参考手册。
 
 <p align="center">
   <img src="docs/assets/hero.png" alt="Claude for Legal 中国法版本 — 着陆页 Hero" width="800">
@@ -31,7 +30,7 @@
 - 新增 `legal-research-cn`、`procurement-legal`、`law-practice-cn` 三个领域；连同商事合同、公司尽调和诉讼模块的补充，合计新增 **17 个技能**。
 - 新增 `law-change-watch` 与 `notice-watch` 两个**只读**监测 Agent；定时运行需在宿主另行配置，不自动发送、提交或改写客户资料。
 - 元典作为默认法律 MCP 声明；北大法宝、威科先行和聚法提供按需接入资料。配置存在不代表已认证或实测可用，参见 [CONNECTORS.md](CONNECTORS.md)。
-- [项目网页](https://cslawyer1985.github.io/claude-for-legal-ZH/) 与本页同步展示现有领域和数量；升级依据、静态验证及未验证项见[升级盘点](docs/upgrade-audit-2026-09.md)。
+- [项目网页源码](docs/index.html)与本页同步展示现有领域和数量；升级依据、静态验证及未验证项见[升级盘点](docs/upgrade-audit-2026-09.md)。
 
 ## 在 Claude Code 中安装
 
@@ -761,80 +760,17 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 
 依据 [Apache License, Version 2.0](LICENSE) 许可。
 
-<p align="center">
-  <img src="docs/assets/about.png" alt="关于作者 — 着陆页 About 区域" width="800">
-</p>
+## 社区贡献
 
-## 关于作者
-
-**陈石律师**，浙江海泰律师事务所副主任、高级合伙人、房地产与建设工程部主任，宁波市律师协会副秘书长、第七届宁波仲裁委员会仲裁员，聚焦建筑房地产、投融资、并购重组及商事争议解决。曾获多家法律媒体与专业机构认可，荣登 LegalOne 2025 中国区建工及房地产实务先锋 45 强、律新社 2025 年度管理合伙人 20 佳（华东），入选《商法》The A-List 法律精英，获评 ALB China 区域市场十五佳长三角地区律师新星，并获律新社 2024 年度并购领域品牌之星。长期为万科、华润置地、信达地产、保利置业、招商蛇口、中海地产等企业提供法律服务，承办"首宗百亿地王""长春第一高楼""台州第一高楼"等代表性项目，累计服务项目投资额超千亿。近年来持续推动 AI 与法律实务融合，强调以结构化方法打通技术逻辑、法律判断与商业场景；著有《赋能法律人：AI 底层思维与应用范式》，并在多地开展相关主题讲座与分享。
-
-本中国法适配版本由陈石律师基于其本地法律知识库体系和多年法律实务经验完成从美国法到中国法的系统改造。
-
-<p align="center">
-  <img src="docs/assets/testimonial.png" alt="用户评价" width="800">
-</p>
-
-## 社区贡献者
-
-感谢每一位为本项目做出贡献的社区成员 🎉
-
-<table align="center">
-  <tr>
-    <td align="center" width="260">
-      <a href="https://github.com/kanekanefy">
-        <img src="https://github.com/kanekanefy.png" width="80" style="border-radius: 50%;" alt="kanekanefy"><br>
-        <b>@kanekanefy</b>
-      </a><br>
-      Codex 多端适配层<br>一键安装脚本
-    </td>
-    <td align="center" width="260">
-      <a href="https://github.com/icedfish">
-        <img src="https://github.com/icedfish.png" width="80" style="border-radius: 50%;" alt="Xiaopai"><br>
-        <b>@icedfish</b>（Xiaopai）
-      </a><br>
-      知识库检索约定收敛<br>民诉法条号修正
-    </td>
-    <td align="center" width="260">
-      <a href="https://github.com/xingbogu">
-        <img src="https://github.com/xingbogu.png" width="80" style="border-radius: 50%;" alt="xingbogu"><br>
-        <b>@xingbogu</b>
-      </a><br>
-      插件配置路径隔离<br>避免中美版本串扰
-    </td>
-    <td align="center" width="260">
-      <a href="https://github.com/yuanweize">
-        <img src="https://github.com/yuanweize.png" width="80" style="border-radius: 50%;" alt="yuanweize"><br>
-        <b>@yuanweize</b>
-      </a><br>
-      criminal-legal 刑事模块<br>脱敏红线与防幻觉设计
-    </td>
-    <td align="center" width="260">
-      <a href="https://github.com/Jamesyu0829">
-        <img src="https://github.com/Jamesyu0829.png" width="80" style="border-radius: 50%;" alt="Jamesyu0829"><br>
-        <b>@Jamesyu0829</b>
-      </a><br>
-      发布检查脚本与 CI<br>Windows 兼容性修复
-    </td>
-  </tr>
-</table>
-
-<p align="center"><sub>头像来自 GitHub，点击可跳转至贡献者主页</sub></p>
-
----
+感谢社区成员对多端适配与安装脚本、知识库检索与法条核对、插件配置隔离、刑事模块脱敏、发布检查与跨平台兼容所做的贡献。
 
 ## 致谢
 
 - **[Anthropic](https://www.anthropic.com/)** — 提供 `claude-for-legal` 开源插件框架和 Claude 模型能力，为中国法本地化改造奠定了坚实基础
 - **[DeepSeek-V4](https://www.deepseek.com/)** — 提供优惠算力支持，使大规模法律技能文件的本地化改造在经济上可行
-- **[浙江海泰律师事务所](https://www.hightac.com/)** — 提供专业成长环境和实务土壤，本版本中融入的合同审查方法论、诉讼分析框架和风险评价体系均源于海泰的长期培养
 
 ---
 
 <p align="center">
   <img src="docs/assets/cta.png" alt="开始使用 Claude for Legal" width="800">
 </p>
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=CSlawyer1985/claude-for-legal-ZH&type=Date)](https://www.star-history.com/?repos=CSlawyer1985%2Fclaude-for-legal-ZH)

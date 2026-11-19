@@ -15,8 +15,6 @@ argument-hint: "[案件材料、主持角色、程序阶段]"
 
 逐一检查 `task_context`、`jurisdiction`、`temporal`、`actors`、`matter`、`claims_and_elements`、`authority_and_interpretation`、`proof`、`procedure`、`outcomes_and_enforcement`、`strategy_and_uncertainty`、`governance`。在本技能中，结论、救济与策略通常限于“双方请求及程序选项的中立整理”；不适用项说明理由，阻塞项列所需材料及暂停的判断。所有具体法条、仲裁规则和期限运行时核验。
 
-## 作者与来源
+## 编制说明
 
-- 作者：CSlawyer
-- 主页：https://chenshi.ai
 - 编制方法：legal-meta-skill；法律依据与项目规则均须在运行时复核。
