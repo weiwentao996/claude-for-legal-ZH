@@ -49,7 +49,9 @@ def yaml_string(text: str) -> str:
     return json.dumps(text, ensure_ascii=False)
 
 
-def adapter_body(domain: str, meta: dict, skills: list[str], description: str) -> str:
+def adapter_body(
+    domain: str, meta: dict, skills: list[str], description: str, *, path_resolution: str = PATH_RESOLUTION
+) -> str:
     commands = ", ".join(f"`{name}`" for name in skills)
     desc = f'Use when the user needs Chinese legal work in the {meta["display"]} domain: {meta["triggers"]}. This is a DeepSeek Harness (dsh) adapter for claude-for-legal-ZH/{domain}; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.'
     return f"""---
@@ -68,7 +70,7 @@ This skill lets DeepSeek Harness (`dsh`) use the original `claude-for-legal-ZH/{
 - Original skills directory: `{domain}/skills`
 - Original plugin description: {description or "See plugin manifest."}
 
-{PATH_RESOLUTION}
+{path_resolution}
 ## How To Use
 
 1. Read `{domain}/CLAUDE.md` before substantive work.
@@ -104,7 +106,7 @@ If the active dsh profile mounts an authenticated legal MCP such as `yuandian` o
 """
 
 
-def cookbook_body(cookbook: str, meta: dict) -> str:
+def cookbook_body(cookbook: str, meta: dict, *, path_resolution: str = PATH_RESOLUTION) -> str:
     root = f"managed-agent-cookbooks/{cookbook}"
     desc = f'Use when the user needs a Chinese legal managed workflow for {meta["display"]}: {meta["triggers"]}. This is a DeepSeek Harness (dsh) adapter for claude-for-legal-ZH/managed-agent-cookbooks/{cookbook}.'
     return f"""---
@@ -124,7 +126,7 @@ This skill ports the original managed-agent cookbook into a DeepSeek Harness (`d
 - Steering examples: `{root}/steering-examples.json`
 - Subagent blueprints: `{root}/subagents`
 
-{PATH_RESOLUTION}
+{path_resolution}
 ## How To Use
 
 1. Read the cookbook `README.md` and `agent.yaml` before running the workflow.

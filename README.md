@@ -66,7 +66,7 @@
 | 运行环境 | 安装方式 | 完整指南 |
 |----------|----------|----------|
 | **Claude Code** | `/plugin marketplace add` + `/plugin install`（见上文） | [QUICKSTART.md](QUICKSTART.md) |
-| **DeepSeek Harness（dsh）** | `scripts/install-dsh.sh` | [INSTALL_DSH.md](INSTALL_DSH.md) |
+| **DeepSeek Harness（dsh）** | 原生 Bundle（`.tgz`）或 `scripts/install-dsh.sh` | [INSTALL_DSH.md](INSTALL_DSH.md) |
 | **Codex Desktop / CLI** | `scripts/install-codex.sh` | [INSTALL_CODEX.md](INSTALL_CODEX.md) |
 | **WorkBuddy**（腾讯工作智能体） | `scripts/install-workbuddy.sh` | [INSTALL_WORKBUDDY.md](INSTALL_WORKBUDDY.md) |
 
@@ -74,11 +74,9 @@
 
 ### DeepSeek Harness（dsh）
 
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 是 DeepSeek 官方开源的 agent harness（Web UI / CLI / headless）。本仓库提供 **dsh 原生适配层**：21 个 `chinese-legal-*` adapter skill、一键安装脚本、法条检索 MCP 接入说明与权限预设模板。
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 是 DeepSeek 官方开源的 agent harness。本仓库提供 **可在桌面端安装的原生 Bundle**，包含 21 个 `chinese-legal-*` 技能入口和对应工作流。从 GitHub Releases 复制 `dsh-v…` 版本的 `.tgz` 资产下载链接，填入桌面端「插件 → 添加插件」；也可用 `python3 scripts/build-dsh-bundle.py` 在本地打包。详细步骤见 [INSTALL_DSH.md](INSTALL_DSH.md)。
 
-```bash
-scripts/install-dsh.sh    # 默认符号链接安装到 ~/.dsh/skills，git pull 即更新
-```
+也可直接把仓库当作工作区打开，或运行 `scripts/install-dsh.sh` 安装用户级技能链接（默认安装到 `~/.dsh/skills`）。
 
 - **原生技能发现**——`.dsh/skills` 是 dsh 官方扫描根目录，适配层自动进入技能目录，热更新无需重启
 - **零安装体验**——把本仓库目录直接添加为 dsh 工作区即可使用（`AGENTS.md`、`CLAUDE.md` 指令自动注入）

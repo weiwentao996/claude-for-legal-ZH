@@ -1,0 +1,44 @@
+name: Publish DeepSeek Harness bundle
+
+on:
+  push:
+    tags:
+      - 'dsh-v*'
+
+permissions:
+  contents: read
+
+jobs:
+  publish-dsh-bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build and verify bundle version
+        shell: bash
+        run: |
+          set -euo pipefail
+          bundle=$(python scripts/build-dsh-bundle.py --output-dir "$RUNNER_TEMP/dsh-release")
+          version=$(python -c 'import json; print(json.load(open("dsh-plugin/package.json"))["version"])')
+          if [[ "$GITHUB_REF_NAME" != "dsh-v$version" ]]; then
+            echo "Tag must match the DSH bundle version: dsh-v$version" >&2
+            exit 1
+          fi
+          printf 'DSH_BUNDLE=%s\n' "$bundle" >> "$GITHUB_ENV"
+
+      - name: Publish bundle as a GitHub Release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release create "$GITHUB_REF_NAME" "$DSH_BUNDLE" \
+            --verify-tag --latest=false \
+            --title "DeepSeek Harness bundle ${GITHUB_REF_NAME#dsh-v}" \
+            --notes '在 DeepSeek Harness Desktop「插件 → 添加插件」中粘贴下方 .tgz 资产的下载链接。不要使用 GitHub 自动生成的 Source code 压缩包。'

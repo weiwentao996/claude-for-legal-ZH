@@ -1,0 +1,22 @@
+{
+  "name": "dsh-claude-for-legal-zh",
+  "version": "1.0.0",
+  "description": "Chinese legal workflows for DeepSeek Harness",
+  "private": true,
+  "license": "Apache-2.0",
+  "engines": {
+    "dsh": ">=0.2.2-rc.5 <0.3.0"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["cordis.patch.yml", "icon.svg", "locale", "skills", "workflows"],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

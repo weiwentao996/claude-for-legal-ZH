@@ -26,6 +26,9 @@ jobs:
       - name: Check public release package
         run: python scripts/check-release.py --strict
 
+      - name: Build the DeepSeek Harness bundle
+        run: python scripts/build-dsh-bundle.py --output-dir "$RUNNER_TEMP/dsh-bundle"
+
       - name: Check managed-agent tool scope
         run: python scripts/lint-tool-scope.py
 

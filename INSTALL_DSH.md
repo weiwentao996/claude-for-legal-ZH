@@ -1,8 +1,8 @@
 # DeepSeek Harness（dsh）安装指南
 
-本仓库原生支持 Claude Code 插件，同时提供 Codex 与 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（`dsh`）两套适配层。本文档覆盖 dsh 侧的安装、使用、MCP 配置与卸载。
+本仓库提供 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（`dsh`）原生插件包，也支持工作区与用户级技能安装。本文档覆盖安装、使用、MCP 配置与卸载。
 
-> 适配基于 `@deepseek-ai/dsh@0.1.0-rc.6`（developer preview）验证。dsh 处于预览期，官方声明会有兼容性破坏变更；本适配层只使用其公开的 skills / instructions / MCP 配置机制，不耦合内部 API，升级 dsh 后重新运行生成器与安装脚本即可。
+> 原生 Bundle 在桌面端自带的 `0.2.2-rc.5` 运行时验证。DSH 仍处于预览期；升级后请新开会话验证技能发现与引用路径。
 
 ## 这是什么
 
@@ -14,9 +14,21 @@ dsh 适配层不会重写法律工作流，而是复用原仓库中的：
 
 dsh adapter 只负责把自然语言请求路由到对应工作流。dsh 官方技能发现机制原生扫描 `.dsh/skills`（项目级，rank 100）与 `~/.dsh/skills`（用户级，rank 400），adapter 即存放于这两处。
 
-## 两种使用模式
+## 安装方式
 
-### 模式 A：仓库即工作区（零安装，适合体验与开发）
+### 模式 A：桌面端插件管理器（推荐）
+
+本方案以 DSH 原生 Bundle 安装到当前 profile，包含 21 个技能入口和所需的领域工作流。装好后可在任意本地工作区使用，不需要另外运行 `install-dsh.sh`，也不依赖仓库路径登记文件。
+
+1. 在本仓库的 GitHub **Releases** 里打开相应的 `dsh-v…` 版本，复制 `dsh-claude-for-legal-zh-版本号.tgz` **资产的下载链接**。如果要从本地源码构建，在仓库根目录运行 `python3 scripts/build-dsh-bundle.py`，复制它打印的 `.tgz` 文件绝对路径。
+2. 打开 DeepSeek Harness Desktop → **插件 → 添加插件**，粘贴下载链接或本地 `.tgz` 绝对路径并安装。不要填 GitHub 仓库根地址、自动生成的 **Source code** 链接或 `dsh-plugin/` 源码目录。
+3. 确认 **中国法律工作流**（包名 `dsh-claude-for-legal-zh`）已启用。若提示重启，按提示操作，然后新建会话测试：
+
+   > 请使用 `chinese-legal-commercial`，列出审查供应商合同前需要确认的信息。
+
+如果同一工作区或用户目录已经有同名技能，DSH 可能优先使用那些本地版本。可先在一个不含本项目源码的新工作区测试；如还安装过用户级同名技能，按下文清理旧入口后再测试。Bundle 不安装 MCP、不修改权限，也不自动创建定时任务或对外发送内容。
+
+### 模式 B：仓库即工作区（零安装，适合体验与开发）
 
 直接在 dsh web 中把本仓库目录添加为工作区并选中：
 
@@ -24,7 +36,7 @@ dsh adapter 只负责把自然语言请求路由到对应工作流。dsh 官方�
 2. 仓库根 `AGENTS.md` 与各目录 `CLAUDE.md` 作为工作区指令自动注入；
 3. 领域文件直接使用仓库相对路径，无需任何安装。
 
-### 模式 B：用户级安装（适合在任意案件目录工作）
+### 模式 C：用户级安装（适合在任意案件目录工作）
 
 在仓库根目录运行：
 
@@ -141,12 +153,16 @@ dsh 的 permission presets 可与法律项目的 `input/`（只读原始材料�
 
 - **hooks 不迁移**：Claude Code 的 hooks.json 在 dsh 中没有声明式等价物；本仓库各领域的 hooks 当前均为空，无实际损失。
 - **slash command 命名空间**：`/<domain>:<command>` 是 Claude Code 概念；dsh 中由 adapter 路由 + 技能直接调用替代。
-- **agent presets**：dsh 的 preset（`agent.cordis.yml` 组合）可进一步封装“法律人格 + 技能 + MCP”，本适配层暂未使用，待 dsh 组合格式稳定后再提供。
+- **Agent presets**：Bundle 只注册技能，不新增 Agent 预设，也不替换 DSH 自带的技能发现器或权限设置。使用带 `skill` 工具的会话。
 - **同名优先级**：`.dsh/skills`（rank 100）高于 `.agents/skills`（rank 200），`~/.dsh/skills`（rank 400）高于 `~/.agents/skills`（rank 500）——dsh 版 adapter 永远覆盖同名 Codex 版，两套并存互不干扰。
 
 ## 更新与卸载
 
-仓库更新后：
+**原生 Bundle**：在插件管理器中用新版本 `.tgz` 的下载链接或绝对路径更新（或卸载旧版再添加新版）。卸载时移除 `dsh-claude-for-legal-zh`；无需删除用户配置或执业画像。
+
+**维护者发布**：先更新 `dsh-plugin/package.json` 中的版本并提交，再推送相同版本的 `dsh-v<版本>` 标签。GitHub Actions 会构建并将 `.tgz` 附到对应的 Release。
+
+**工作区与用户级技能**：仓库更新后：
 
 ```bash
 git pull
@@ -154,7 +170,7 @@ python3 scripts/generate_dsh_adapters.py   # 重新生成 .dsh/skills（如 adap
 scripts/install-dsh.sh                     # copy 模式需要重装；link 模式只需重跑生成器
 ```
 
-卸载：
+仅卸载脚本安装的用户级技能：
 
 ```bash
 rm -rf ~/.dsh/skills/chinese-legal-*

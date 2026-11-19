@@ -1,0 +1,9 @@
+# Add a host-level provider without replacing the workspace/user skill provider.
+- insert:
+    - id: claude-for-legal-zh-skills
+      name: '@deepseek-ai/dsh-skill-filesystem'
+      config:
+        providerName: claude-for-legal-zh
+        includeDefaultRoots: false
+        watch: false
+        bundledSkillDir: !!js process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('dsh-claude-for-legal-zh/package.json')), 'skills')

@@ -125,9 +125,17 @@ def check_json_yaml(errors: list[str]) -> None:
     if yaml is None:
         print("  note: PyYAML not installed, skipping YAML validation")
         return
+
+    class DshPatchLoader(yaml.SafeLoader):
+        pass
+
+    # Cordis uses !!js for configuration expressions. Treat them as scalars
+    # for YAML validation; this check never executes the expression.
+    DshPatchLoader.add_constructor("tag:yaml.org,2002:js", lambda loader, node: loader.construct_scalar(node))
     for path in repo_files({".yaml", ".yml"}):
+        loader = DshPatchLoader if rel(path) == "dsh-plugin/cordis.patch.yml" else yaml.SafeLoader
         try:
-            yaml.safe_load(read_text(path, errors))
+            yaml.load(read_text(path, errors), Loader=loader)
         except yaml.YAMLError as exc:
             errors.append(f"{rel(path)}: invalid YAML ({exc})")
 
